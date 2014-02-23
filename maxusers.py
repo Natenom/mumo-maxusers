@@ -180,7 +180,15 @@ class maxusers(MumoModule):
                         server.setState(state)
                         server.sendMessage(state.session, 'The channel you attempted to join is limited to a maximum of %i users, and is currently full.' % climit.limit)
                     except self.murmur.InvalidChannelException:
-                        log.error("Moving user '%s' failed, target channel %d does not exist on server %d", state.name, self.cfg().channel, sid)
+                        defchan = server.getConf("defaultchannel")
+                        if defchan:
+                            state.channel = int(defchan)
+                        else:
+                            state.channel = 0 #Root
+
+                        server.setState(state)
+                        server.sendMessage(state.session, 'The channel you attempted to join is limited to a maximum of %i users, and is currently full. Your previous channel was removed so you were moved into the default channel.' % climit.limit)
+                        log.error("User '%s' moved to default channel %d on server %d because previous channel was removed.", state.name, state.channel, sid)
             else: 
                 log.debug("Channel %i is not over max with %i users connected when there is a max of %i", curchan, chanCount, climit.limit)
         else:
