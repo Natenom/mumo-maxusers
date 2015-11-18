@@ -1,6 +1,6 @@
 mumo-maxusers
 =============
-NOTE: This plugin is going to become obsolete because in the near future this will be implemented into the Mumble-Server itself, see at https://wiki.natenom.com/w/Mumble_Moderator/MaxUsers.
+NOTE: This module is going to become obsolete because in the near future this will be implemented into the Mumble-Server itself, see at https://wiki.natenom.com/w/Mumble_Moderator/MaxUsers.
 
 This is a mumo module to provide an administrator the capability of enforcing granular user limits by channel in mumble.
 
