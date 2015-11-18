@@ -1,5 +1,6 @@
 mumo-maxusers
 =============
+NOTE: This plugin is going to become obsolete because in the near future this will be implemented into the Mumble-Server itself, see at https://wiki.natenom.com/w/Mumble_Moderator/MaxUsers.
 
 This is a mumo module to provide an administrator the capability of enforcing granular user limits by channel in mumble.
 
@@ -10,3 +11,5 @@ Features:
 - Allow for groups to be exempted from enforcement on channels based on the group/acl applied to the channel. Can override the exception on each channel if you wish.
 
 This module should be considered beta for the moment, but is currently being actively used/tested. 
+
+Some documentation about this module can be found at https://wiki.natenom.com/w/Mumble_Moderator/MaxUsers
